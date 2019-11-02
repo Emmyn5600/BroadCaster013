@@ -1,0 +1,265 @@
+body
+{
+  font-family: Tahoma, Geneva, Verdana, sans-serif ;
+  color: #fff;
+  background-color:#f1f1f1;
+  background-size: cover;
+}
+*
+{
+  margin: 0px;
+  padding: 0px;
+}
+.banner
+{
+  background: url('../images/pexels.jpeg');
+  width: 100%;
+  background-size: cover;
+}
+.top-bar
+{
+  background-color:#01474a;
+  display: flex;
+   width: 100%;
+   height: auto;
+   position: fixed;
+}
+.logo
+{
+  font-weight: bold;
+  color: #ffffff;
+  flex: 1;
+  font-size: 30px;
+  padding:10px;
+  text-transform: uppercase;
+  margin-left: 10px;
+} 
+.logo span
+{
+  color: green;
+}
+.logo span1
+{
+  color: yellowgreen;
+}
+.menu
+{
+  flex: 1;
+}
+.menu ul{
+  display: flex;
+  list-style: none;
+  margin-top: 15px;
+  margin-left: 90px;
+  padding-right: 150px;
+}
+.menu ul li{
+  flex: 1;
+  text-align: left;
+}
+.menu ul li a{
+  margin-left: 10px;
+  color: #fff;
+  font-size: 22px;
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.menu ul li a:hover{
+background-color:  green;
+padding: 5px;
+}
+.banner-text {
+  display: flex;
+  padding: 15% 0;
+}
+.banner-text-items{
+  color: #fff;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  height: auto;
+}
+.banner-text-items h2 {
+  font-size: 2em;
+  margin-top: 60px;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: .8;
+  letter-spacing: 4px;
+}
+.banner-text-items p{
+ color:  #ffffff;
+ font-size: 20px;
+ opacity: .8;
+ text-align: inherit;
+} 
+.main-content
+{
+  display: flex;
+  flex-flow: row wrap;
+   padding: 0.1% 0;
+   background: rgba(44,62,80,0.7);
+}
+.main-content img
+{
+  padding-left: 1%;
+  height: auto;
+  width: 100%;
+}
+.main-content1
+{
+  display: flex;
+  flex-flow: row wrap;
+   padding: 0.1% 0;
+   background: rgba(44,62,80,0.7);
+}
+.main-content1 img
+{
+  padding-left: 1%;
+  height: auto;
+  width: 100%;
+}
+h1
+{
+  text-align: center;
+  margin-top: 20px;
+  color:black;
+}
+#head
+{
+  color:black;
+  /* margin-top: 6px; */
+}
+.main1
+{
+  flex: 1;
+  padding: 3%;
+  text-align: center;
+}
+footer{
+  background-color:#222222 ;
+  overflow: hidden;
+}
+.container-social-media{ 
+display: flex;
+grid-template-columns: 1fr 1fr ;
+height: 60px;
+margin-left: 20%;
+}
+.container-social-media p{
+  font-weight: bold;
+  color: white;
+  padding-top: 15px;
+  font-size: 20px;
+  text-align: left;
+}
+.footer-social-meadia{
+display: grid;
+flex: 3;
+grid-template-columns: 1fr 1fr 1fr ;
+padding: 20px 15px;
+margin-right: 20%;
+}
+.footer-social-meadia img{
+  max-width: 60px;
+  max-height: 100%;
+  margin-left: 180px;
+}
+.footer-copyright{
+  color: #ffffff;
+  text-align: center;
+  background-color: #000000;
+  border: 1px solid #000000;
+}
+.footer-copyright p{
+  font-weight: bold;
+  margin-bottom: 3px;
+  font-size: 1em;
+}
+
+@media all and (max-width:500px){
+  .top-bar{
+    flex-direction: column;
+    text-align: center;
+  }
+  .logo{
+    padding: 18px 0 0;
+  }
+  .menu ul{
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .menu ul li{
+    padding: 1px;
+    
+  }
+  .banner-text-items{
+    width: 100%;
+  }
+  .banner-text-items h2{
+    font-size: 12px;
+  }
+  .banner-text-items p {
+    font-size: 10px;
+  }
+  .main-content{
+    flex-direction: column;
+  }
+  .footer-copyright
+  {
+    font-size: 2em;
+  }
+ .footer-social-meadia img
+  {
+  width: 100%;
+  }
+  .container-social-media p
+  {
+    font-size: 1em;
+    flex: 1;
+    padding: 20px;
+  }
+}
+@media all and (max-width:800px){
+  .top-bar{
+    flex-direction: column;
+    text-align: center;
+  }
+  .logo{
+    padding: 18px 0;
+  }
+  .menu ul{
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .menu ul li{
+    padding: 1px 10px;
+  }
+  .banner-text-items{
+    width: 100%;
+  }
+  .banner-text-items h2{
+    font-size: 12px;
+  }
+  .main-content{
+    flex-direction: column;
+  }
+  .footer-copyright
+  {
+    font-size: 1em;
+  }
+  .footer-social-media img 
+  {
+  width: 100%;
+  }
+  .container-social-media p
+  {
+    font-size: 1em;
+  }
+  h1
+  {
+    flex-direction: column;
+    font-size: 1em;
+  }
+}
