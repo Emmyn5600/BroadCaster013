@@ -450,6 +450,65 @@ input[type=button]:hover
     color: aliceblue;
     opacity: 0.8;
 }
-
+.contact-items
+{
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+.contact
+{
+    background: rgba(44,62,80,0.7);
+    padding: 25px;
+    width: 800px;
+    height: 450px;
+    margin-left: 180px;
+    margin: 0 auto;
+} 
+.contact-items h2 {
+  color: black;
+  font-size: 40px;
+  margin-bottom: 80px;
+}
+.contact-items input[type="text"]{
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 50%;
+}
+.contact-items textarea {
+  border-radius: 10px;
+  height: 100px;
+  padding: 15px;
+  width: 50%;
+}
+.contact-items a {
+  background: #da4b29;
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 5px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.contact-items input select{
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 50%;
+}
+@media all and (max-width:500px){
+  .contact{
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media all and (max-width:800px){
+  .contact{
+    flex-direction: column;
+    width: 100%;
+  }
+}
 
 
