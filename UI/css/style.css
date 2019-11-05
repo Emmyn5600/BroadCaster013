@@ -511,4 +511,179 @@ flex-direction: column;
   }
 }
 
+.admin-wrapper
+{
+    display: flex;
+    height: calc(100% - 60px);
+}
+.admin-wrapper .left-sidebar
+{
+ flex: 2;
+ height: 820px;
+ background: #234a57;
+}
+.admin-wrapper .left-sidebar ul a
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    color: aliceblue;
+    text-decoration: none;
+}
+.admin-wrapper .left-sidebar ul li a
+{
+    padding: 18px;
+    display: block;
+    border-bottom: 1px solid #0B4844;
+}
+.admin-wrapper .left-sidebar ul li a:hover
+{
+   background: #0B4844;  
+}
+.admin-wrapper .admin-content 
+{
+ flex: 8;
+ height: 850px;
+ padding: 48px 100px 100px;
+ overflow-y: hidden;
+}
+.admin-content .page-title
+{
+text-align: center;
+margin-bottom: 1.5rem;
+color: black;    
+}
+#add
+{
+    text-decoration: none;
+}
+#manage
+{
+    text-decoration: none;
+}
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1em;
+}
+th, 
+td{
+    padding: 15px;
+    text-align: left;
+    border-bottom:1px solid #d3d3d3;
+}
+.color
+{
+color: black;
+}
+.edit 
+{
+    color: green;
+    text-decoration: none;
+}
+.delete
+{
+    color: red;
+    text-decoration: none;
+}
+.publish
+{
+    color: blue;
+    text-decoration: none;
+}
+.edit:hover,
+.delete:hover,
+.publish:hover {
+    text-decoration: underline;
+}
+
+form div
+{
+   margin-bottom: 15px; 
+   margin-left: 100px;
+}
+form input
+{
+    margin-left: 80px;
+
+}
+.contact-items
+{
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+.contact
+{
+    background: rgba(44,62,80,0.7);
+    padding: 25px;
+    width: 900px;
+    height: auto;
+    margin-left: 180px;
+    margin: 0 auto;
+    margin-top: 20px;
+} 
+.contact-items input[type="text"]{
+  border-radius: 10px;
+  margin-bottom: 8px;
+  padding: 10px;
+  width: 50%;
+}
+.File {
+  border-radius: 10px;
+  margin-bottom: 8px;
+  padding: 10px;
+  width: 50%;
+}
+.contact-items textarea {
+  border-radius: 10px;
+  height: 50px;
+  padding: 15px;
+  width: 50%;
+}
+.contact-items #textarea1 {
+  border-radius: 10px;
+  height: 200px;
+  padding: 15px;
+  width: 50%;
+}
+.contact-items a {
+  background: #da4b29;
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  margin-top: 25px;
+  padding: 15px 80px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.mobile-icon
+{
+    display:none ;
+}
+@media all and (max-width:500px){
+    .contact{
+        flex-direction: column;
+        width: 100%;
+      }
+      .mobile-icon
+      {
+          display: inline-block;
+          color: white;
+          float: right;
+          margin-top: 30px;
+          margin-right: 20px;
+      }
+      
+}
+
+@media all and (max-width:800px){
+    .contact{
+        flex-direction: column;
+        width: 100%;
+      }
+       
+}
+
 
