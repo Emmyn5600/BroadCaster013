@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
         <title>BroadCaster</title>
         <link href="../css/style.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Flamenco&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <header>
@@ -20,22 +17,50 @@
                      <li><a href="../pages/sign up.html">Sign Up</a></li>
                      <li><a href="../pages/contact.html">Contact</a></li>
                  </ul>
-                 <a href="#" class="mobile-icon" onclick="slideshow()"><i class="fas fa-bars"></i></a>
+                 <a href="#" class="mobile-icon" onclick="slideshow()">Menu</a>
                 </div>
             </nav>
-            <div class="signup">
-                <form>
-                    <h2 style="color:#fff; text-align: center;">Sign Up</h2><br>
-                    <input type="text" name="username" placeholder="First name"><br><br>
-                    <input type="text" name="username" placeholder="Last name"><br><br>
-                    <input type="password" name="pass" placeholder="Password"><br><br>
-                    <input type="password" name="pass" placeholder="Confirm Password"><br><br>
-                    <input type="text" name="email" placeholder="Email address"><br><br>
-                    <input type="button" value="Sign up" onclick="myfunction()"><br>
-                    Already have account?<a href="../pages/login.html" style="text-decoration: none; font-family: 'Play', sans-serif; color: yellow;">&nbsp;Log In</a>
-                    <div id="msg">Congratulations you sign up successfully!!! </div>  
-                </form>
+            <div class="cont">
+                <div class="ro">
+                    <div class="col-md">
+                        <div class="row">
+                    <div class="col-md-1 register-left">  
+                        <img src="../images/show.png">
+                      <h3>Join Us</h3>
+                      <p>BroadCaster leading to solutions related to corruption<br> and intervene with the government </p>
+                      <a href="../pages/index.html"><button type="button" class="primary">About Us</button></a>
+                    </div>
+                    <div class="col-md-2 register-right">  
+                        <h2>Register Here</h2>
+                        <div class="register-form">
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="First name">
+                            </div>
+                            <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Second name">
+                                  </div>
+                            <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Username">
+                                  </div> 
+                                  <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Phone number">
+                                      </div> 
+                                      <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Email">
+                                          </div> 
+                                          <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="New password">
+                                              </div> 
+                                              <div class="form-group">
+                                                    <input type="password" class="form-control" placeholder="Confirm password">
+                                                  </div> 
+                                                 <a href="../pages/login.html"><button type="button" class="primary">Register</button></a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            </div>
+            </header>
             <script src="../script/script.js">
             </script>
           </body>
