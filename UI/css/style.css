@@ -549,9 +549,63 @@ margin-bottom: 1.5rem;
 color: black;    
 }
 
-/* start user css */
 
-/* end user css */
+#add
+{
+    text-decoration: none;
+}
+#manage
+{
+    text-decoration: none;
+}
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1em;
+}
+th, 
+td{
+    padding: 15px;
+    text-align: left;
+    border-bottom:1px solid #d3d3d3;
+}
+.color
+{
+color: black;
+}
+.edit 
+{
+    color: green;
+    text-decoration: none;
+}
+.delete
+{
+    color: red;
+    text-decoration: none;
+}
+.publish
+{
+    color: blue;
+    text-decoration: none;
+}
+.edit:hover,
+.delete:hover,
+.publish:hover {
+    text-decoration: underline;
+}
+
+form div
+{
+   margin-bottom: 15px; 
+   margin-left: 100px;
+}
+form input
+{
+    margin-left: 80px;
+
+}
+
 
 /* start status */
 
