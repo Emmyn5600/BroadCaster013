@@ -610,16 +610,71 @@ form input
 /* start status */
 
 
+.container-1
+{
+    width: 800px;
+    margin: 50px auto 0;
+    display: table;
+    box-sizing: border-box;
+}
+.row-1
+{
+    margin: 20px 0;
+}
+.column-1
+{
+    background: #000;
+    display: table-cell;
+    padding: 10px;
+    width: 33.33333%;
+    text-align: center;
+    color: black;
+    vertical-align: middle;
+    border-right: 10px solid #fff;
+    border-left: 10px solid #fff;
+}
+.row-1:nth-child(1) .column-1:nth-child(1)
+{
+    background: #596270;
+}
+.row-1:nth-child(1) .column-1:nth-child(2)
+{
+    background: #cf6768;
+}
+.row-1:nth-child(1) .column-1:nth-child(3)
+{
+    background: #8accc3;
+}
+.column-1 input
+{
+    font-size: 20px; 
+    width: 50px;
+}
+
+@media (max-width:900px)
+{
+   .container-1
+   {
+       margin: 0px;
+       padding: 10px;
+       width: 100%;
+   }
+   .column-1
+   {
+       width: 100%;
+       display: block;
+       border: none;
+       box-sizing: border-box;
+   }  
+   .row-1
+   {
+       margin: 0px;
+   }
+}
 
 /* end status */
 
 /* start list css */
-/* table .tab
-{
-    overflow-x: scroll;
-    background-color: rgba(44,62,80,0.7);
-    width: 100%;
-} */
 tr th{
     color:#000;
 }
@@ -631,14 +686,6 @@ th{
     text-align: center;
 }
 
-tr:nth-child(even)
-{
-    /* background-color: rgba(44,62,80,0.7); */
-}
-tr:nth-child(odd)
-{
-    /* background-color: #000; */
-}
 
 /* end list css */
 .contact-items
