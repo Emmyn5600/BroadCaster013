@@ -313,7 +313,7 @@ a
 .login-box h1{
      float: left;
      font-size: 40px;
-     border-bottom: 6px solid #4caf50;
+     border-bottom: 6px solid rgba(44,62,80,0.7);
      margin-bottom: 50px;
      padding: 13px 0;
 }
@@ -324,7 +324,7 @@ a
     font-size: 20px;
     padding: 8px 0;
     margin: 8px 0;
-    border-bottom: 1px solid #4caf50;
+    border-bottom: 1px solid #fff;
 }
 .textbox img
 {
@@ -347,7 +347,7 @@ a
 {
 width: 100%;
 background: none;
-border: 2px solid #4caf50;
+border: 2px solid #fff;
 color: white;
 padding: 5px;
 font-size: 18px;
@@ -356,8 +356,14 @@ margin: 12px 0;
 }
 .bt:hover
 {
-    background: black;
+    background: rgba(44,62,80,0.7);
 }
+::placeholder
+{
+    background-color: rgba(44,62,80,0.7);
+    opacity: 0.8;
+}
+
 .register-left
 {
     float: left;
@@ -365,12 +371,18 @@ margin: 12px 0;
   color: #fff;
   padding: 30px;  
 }
+#joi
+{
+    color: rgba(44,62,80,0.7);
+}
+
 .register-left img
 {
   margin-top: 60px;
   margin-bottom: 18px;
   width: 80px;
   animation: mover 1s infinite alternate;
+
 }
 .register-left p
 {
@@ -381,21 +393,21 @@ margin: 12px 0;
     border-radius: 1.5rem;
     border: none;
     width: 120px;
-    background: #f8f8f8;
+    background: #000;
     font-weight: 600;
-    color: #555;
+    color: #fff;
     margin-top: 20px;
     padding: 10px;
 }
 .register-left .primary:hover
 {
-    background: black;
+    background: rgba(44,62,80,0.7);
 }
 .register-right
 {
     float:right;
     border: none;
-    background: #f8f8f8;
+    background: rgba(44,62,80,0.7);
     margin-right: 100px;
     border-top-left-radius: 40% 50%;
     border-bottom-left-radius: 40% 50%;
@@ -424,7 +436,7 @@ margin: 12px 0;
     padding: 1px 0;
     transition: border 0.5s;
     outline: none;
-    color: black;
+    color: white;
 }
 ::placeholder
 {
@@ -439,7 +451,7 @@ margin: 12px 0;
     border-radius: 1.5rem;
     border: none;
     width: 120px;
-    background: #ff9800;
+    background: #000;
     font-weight: 600;
     color: #fff;
     margin-top: 20px;
@@ -447,7 +459,7 @@ margin: 12px 0;
 }
 .register-right .primary:hover
 {
-    background: #ff5722;
+    background: #0B4844;
 }
 @keyframes mover
 {
@@ -455,55 +467,31 @@ margin: 12px 0;
  100%{transform: translateY(-20px);}
 }
 
-
-.contact-items
-{
-display: flex;
-align-items: center;
-flex-direction: column;
+.contact-items h2 {
+  color: #fff;
+  font-size: 40px;
+  margin-bottom: 60px;
 }
-.contact
+.contact-items input
 {
     background: rgba(44,62,80,0.7);
-    padding: 25px;
-    width: 800px;
-    height: 450px;
-    margin-left: 180px;
-    margin: 0 auto;
-} 
-.contact-items h2 {
-  color: black;
-  font-size: 40px;
-  margin-bottom: 80px;
+    color: white;
 }
-.contact-items input[type="text"]{
-  border-radius: 10px;
-  margin-bottom: 15px;
-  padding: 15px;
-  width: 50%;
-}
+
 .contact-items textarea {
   border-radius: 10px;
-  height: 100px;
+  height: 200px;
   padding: 15px;
   width: 50%;
+  color: white;
+  background: rgba(44,62,80,0.7);
 }
-.contact-items a {
-  background: #da4b29;
-  color: #fff;
-  display: block;
-  font-size: 20px;
-  margin-top: 20px;
-  padding: 5px 30px;
-  text-decoration: none;
-  text-transform: uppercase;
+
+#sub
+{
+    background: rgba(44,62,80,0.7);
 }
-.contact-items input select{
-  border-radius: 10px;
-  margin-bottom: 15px;
-  padding: 15px;
-  width: 50%;
-}
+
 @media all and (max-width:500px){
   .contact{
     flex-direction: column;
@@ -525,7 +513,7 @@ flex-direction: column;
 .admin-wrapper .left-sidebar
 {
  flex: 2;
- height: 820px;
+ height: 900px;
  background: #234a57;
 }
 .admin-wrapper .left-sidebar ul a
@@ -549,9 +537,10 @@ flex-direction: column;
 .admin-wrapper .admin-content 
 {
  flex: 8;
- height: 850px;
+ height: 900px;
  padding: 48px 100px 100px;
  overflow-y: hidden;
+ background: rgba(44,62,80,0.7);
 }
 .admin-content .page-title
 {
@@ -559,61 +548,19 @@ text-align: center;
 margin-bottom: 1.5rem;
 color: black;    
 }
-#add
-{
-    text-decoration: none;
-}
-#manage
-{
-    text-decoration: none;
-}
-table
-{
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 1.1em;
-}
-th, 
-td{
-    padding: 15px;
-    text-align: left;
-    border-bottom:1px solid #d3d3d3;
-}
-.color
-{
-color: black;
-}
-.edit 
-{
-    color: green;
-    text-decoration: none;
-}
-.delete
-{
-    color: red;
-    text-decoration: none;
-}
-.publish
-{
-    color: blue;
-    text-decoration: none;
-}
-.edit:hover,
-.delete:hover,
-.publish:hover {
-    text-decoration: underline;
-}
 
-form div
-{
-   margin-bottom: 15px; 
-   margin-left: 100px;
-}
-form input
-{
-    margin-left: 80px;
+/* start user css */
 
-}
+/* end user css */
+
+/* start status */
+
+/* end status */
+
+/* start list css */
+
+
+/* end list css */
 .contact-items
 {
 display: flex;
@@ -622,7 +569,7 @@ flex-direction: column;
 }
 .contact
 {
-    background: rgba(44,62,80,0.7);
+    background: black;
     padding: 25px;
     width: 900px;
     height: auto;
@@ -654,8 +601,15 @@ flex-direction: column;
   padding: 15px;
   width: 50%;
 }
+.contact-items #textarea2
+{
+    border-radius: 10px;
+    height: 90px;
+    padding: 15px;
+    width: 50%;
+}
 .contact-items a {
-  background: #da4b29;
+  background: #0B4844;
   color: #fff;
   display: block;
   font-size: 20px;
