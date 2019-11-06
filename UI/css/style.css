@@ -609,10 +609,36 @@ form input
 
 /* start status */
 
+
+
 /* end status */
 
 /* start list css */
+/* table .tab
+{
+    overflow-x: scroll;
+    background-color: rgba(44,62,80,0.7);
+    width: 100%;
+} */
+tr th{
+    color:#000;
+}
+tr td
+{
+    color: black;
+}
+th{
+    text-align: center;
+}
 
+tr:nth-child(even)
+{
+    /* background-color: rgba(44,62,80,0.7); */
+}
+tr:nth-child(odd)
+{
+    /* background-color: #000; */
+}
 
 /* end list css */
 .contact-items
@@ -621,16 +647,6 @@ display: flex;
 align-items: center;
 flex-direction: column;
 }
-.contact
-{
-    background: black;
-    padding: 25px;
-    width: 900px;
-    height: auto;
-    margin-left: 180px;
-    margin: 0 auto;
-    margin-top: 20px;
-} 
 .contact-items input[type="text"]{
   border-radius: 10px;
   margin-bottom: 8px;
