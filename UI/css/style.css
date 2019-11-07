@@ -673,7 +673,9 @@ margin: 12px 0;
 {
 text-align: center;
 margin-bottom: 1.5rem;
-color: black;    
+color: black; 
+font-weight: bold; 
+font-size: 20px;  
 }
 
 
@@ -870,6 +872,18 @@ flex-direction: column;
     .contact{
         flex-direction: column;
         width: 100%;
+      }
+      .contact-items input[type=text]
+      {
+          width: 200px;
+      }
+      .contact-items #textarea1 
+      {
+          width: 200px;
+      }
+      .contact-items #textarea2 
+      {
+          width: 200px;
       }
       .mobile-icon
       {
