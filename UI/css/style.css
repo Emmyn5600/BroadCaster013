@@ -397,6 +397,78 @@ margin: 12px 0;
     opacity: 0.8;
 }
 
+.box-10
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  box-sizing: border-box;
+  background: rgba(44,62,80,0.7);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  display: flex;
+  transition: .5s;
+}
+.box-10:hover
+{
+  box-shadow: 0 15px 30px #fff;
+}
+.box-10 .imgbox-10
+{
+  width: 150px;
+  flex: 0 0 150px;
+}
+.box-10 .imgbox-10 img
+{
+  max-width: 100%;
+}
+.box-10 .content-20
+{
+  padding-left:20px;
+}
+.box-10 .content-20 #wapp
+{
+  margin: 0;
+  padding-left: 0;
+  color: #ff005c;
+  font-size: 22px;
+}
+.box-10 .content-20 #wapp-2
+{
+  margin: 0;
+  padding-left: 0;
+  color:#fff;
+  font-size: 22px;
+}
+.box-10 .content-20 #wap
+{
+  margin: 0;
+  padding: 10px 0 0;
+  text-align: justify;
+  font-size: 20px;
+  color: #000;
+}
+.box-10 .content-20 #wap-2
+{
+  margin: 0;
+  padding: 10px 0 0;
+  text-align: justify;
+  font-size: 20px;
+  color: #000;
+}
+@media screen and (max-width: 800px){
+  .box-10
+  {
+    width: 100%;
+  }
+  .content-20 
+  {
+    width: 100%;
+  }
+}
+
 .register-left
 {
     float: left;
