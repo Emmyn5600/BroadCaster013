@@ -1,0 +1,40 @@
+{
+  "name": "broadcaster013",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel server.js --out-dir build",
+    "dev-start": "babel-watch server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emmyn5600/BroadCaster013.git"
+  },
+  "author": "Emmy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emmyn5600/BroadCaster013/issues"
+  },
+  "homepage": "https://github.com/Emmyn5600/BroadCaster013#readme",
+  "dependencies": {
+    "@hapi/hapi": "^18.4.0",
+    "@hapi/joi": "^15.0.3",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "module_name": "^1.0.0",
+    "moment": "^2.24.0",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-watch": "^7.0.0"
+  },
+  "keywords": []
+}
