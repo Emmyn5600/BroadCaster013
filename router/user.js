@@ -5,5 +5,5 @@ import validate from '../middleware/auth'
 
 const route = express.Router();
 route.post('/user',validate.uservalidation,user.create);
-
+route.post('/signin', user.signin)
 export default route;

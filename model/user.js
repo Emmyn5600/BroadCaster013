@@ -1,3 +1,6 @@
+import moment from 'moment'
+import uuid from 'uuid'
+
 class user{
     constructor(){
         this.user = [];
@@ -13,9 +16,15 @@ class user{
        email : data.email || "",
        password : data.password || "",
        confirmpassord : data.confirmpassword || "",
-      }
+      };
      this.user.push(newUser);
       return newUser;
+    }
+    findbyOne(email){
+        return this.User.find(found => found.email === email);
+    }
+    findbypassword(password){
+        return this.user.find(found => found.password === password);
     }
 }   
 export default new user ();
