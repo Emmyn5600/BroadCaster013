@@ -191,9 +191,7 @@ background-color: white;
     animation: colorchangeBROADCASTER 1s infinite;
 }
 @keyframes colorchangeBROADCASTER{
-    0%{color:  rgba(44,62,80,0.7) ;}
-    25%{color: white ;}
-    50%{ color: black;}
+   
 }
 .mobile-icon
 {
