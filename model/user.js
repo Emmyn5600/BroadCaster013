@@ -20,11 +20,8 @@ class user{
      this.user.push(newUser);
       return newUser;
     }
-    findbyOne(email){
-        return this.User.find(found => found.email === email);
-    }
-    findbypassword(password){
-        return this.user.find(found => found.password === password);
+    findbyEmail(email){
+        return this.user.find(found => found.email === email);
     }
 }   
 export default new user ();
