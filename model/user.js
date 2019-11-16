@@ -20,11 +20,25 @@ class user{
      this.user.push(newUser);
       return newUser;
     }
-    findbyOne(email){
-        return this.User.find(found => found.email === email);
+    findbyEmail(email){
+        return this.user.find(found => found.email === email);
     }
-    findbypassword(password){
-        return this.user.find(found => found.password === password);
-    }
+    createadd = (data) => {
+        this.add = [];
+        let addid = this.add.length +  1;
+        const addentry = {
+           id: addid,
+           title: data.title || "",
+           type: data.type || "",
+           comment: data.comment || "",
+           location: data.location || "",
+           status: data.status || "",
+           images: data.images || "",
+           videos: data.videos || ""
+        };
+        this.add.push(addentry);
+        return addentry;
+    } 
+   
 }   
 export default new user ();
