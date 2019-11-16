@@ -23,9 +23,13 @@
     "@hapi/hapi": "^18.4.0",
     "@hapi/joi": "^15.0.3",
     "express": "^4.17.1",
+    "express-fileupload": "^1.1.6-alpha.6",
+    "joi-image-extension": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
     "module_name": "^1.0.0",
     "moment": "^2.24.0",
+    "multer": "^1.4.2",
+    "node-video-lib": "^2.1.10",
     "uuid": "^3.3.3"
   },
   "devDependencies": {

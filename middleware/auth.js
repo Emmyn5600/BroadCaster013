@@ -1,4 +1,6 @@
 import Joi from "@hapi/joi";
+import multer from 'multer';
+
 class validation{
     uservalidation(req, res, next){
         const schema = {
@@ -27,6 +29,28 @@ class validation{
           }else {
               next();
           }
+    }
+
+    useraddvalidation(req,res,next){
+        const show = {
+            title : Joi.string().required(),
+            type: Joi.string().required(),
+            comment: Joi.string().required(),
+            location: Joi.string().required(),
+            status: Joi.string().required(),
+            
+            images:Joi.string().required(),
+            videos:Joi.string().required()
+        };
+        const result1 = Joi.validate(req.body, show);
+        if(result1.error){
+            return res.status(401).send({
+                status: 401,
+                error: result1.error.details[0].message
+            });
+        }else {
+            next();
+        }
     }
 };
 export default new validation();
