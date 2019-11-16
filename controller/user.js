@@ -48,15 +48,22 @@ class register{
   createnewadd = (req, res) => {
      const addentry = model.createadd(req.body);
    //   const upload = multer({dest: '/uploads/'});
+   const id = addentry.id;
      const token = jwt.sign({id: addentry.id}, 'Kigali2010');
      return res.status(200).send({
         status: 200,
         data: [{
+           id,
            message: "Created red-flag record",
-          
         }]
      });
   }
-
+  getAll(req, res) {
+   const get = model.displayAll();
+   return res.status(200).send({
+      status: 200,
+      data: get
+   });
+ }
 }
 export default new register();
