@@ -23,5 +23,22 @@ class user{
     findbyEmail(email){
         return this.user.find(found => found.email === email);
     }
+    createadd = (data) => {
+        this.add = [];
+        let addid = this.add.length +  1;
+        const addentry = {
+           id: addid,
+           title: data.title || "",
+           type: data.type || "",
+           comment: data.comment || "",
+           location: data.location || "",
+           status: data.status || "",
+           images: data.images || "",
+           videos: data.videos || ""
+        };
+        this.add.push(addentry);
+        return addentry;
+    } 
+   
 }   
 export default new user ();

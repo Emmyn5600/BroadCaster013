@@ -45,6 +45,18 @@ class register{
       error: "error occured"
   })
  }
+  createnewadd = (req, res) => {
+     const addentry = model.createadd(req.body);
+   //   const upload = multer({dest: '/uploads/'});
+     const token = jwt.sign({id: addentry.id}, 'Kigali2010');
+     return res.status(200).send({
+        status: 200,
+        data: [{
+           message: "Created red-flag record",
+          
+        }]
+     });
+  }
 
 }
 export default new register();
