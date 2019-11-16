@@ -1,9 +1,11 @@
 import moment from 'moment'
 import uuid from 'uuid'
+import { isNumber } from 'util';
 
 class user{
     constructor(){
         this.user = [];
+        this.add = [];
     }
     createNewuser = (data) => {
        let userid = this.user.length +  1;
@@ -24,10 +26,10 @@ class user{
         return this.user.find(found => found.email === email);
     }
     createadd = (data) => {
-        this.add = [];
         let addid = this.add.length +  1;
         const addentry = {
            id: addid,
+           createon:moment.now(),
            title: data.title || "",
            type: data.type || "",
            comment: data.comment || "",
@@ -39,6 +41,10 @@ class user{
         this.add.push(addentry);
         return addentry;
     } 
+
+    displayAll(){
+        return this.add; 
+    }
    
 }   
 export default new user ();
