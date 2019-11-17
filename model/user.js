@@ -41,6 +41,9 @@ class user{
         this.add.push(addentry);
         return addentry;
     } 
+    findbystatus(){
+       return this.add.find( search => search.id === 3);
+    }
 
     displayAll(){
         return this.add; 

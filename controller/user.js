@@ -65,5 +65,18 @@ class register{
       data: get
    });
  }
+  getspecific(req,res) {
+     const one = model.findbystatus();
+     if(!one){
+        return res.status(401).send({
+           status: 401,
+           error: "id you are finding is not found" 
+        })
+     }
+     return res.status(200).send({
+        status: 200,
+        data: one
+     })
+  }
 }
 export default new register();
