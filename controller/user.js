@@ -1,12 +1,16 @@
 import model from '../model/user'
 import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
+import help from '../help'
+
+dotenv.config();
 
 class register{
    create = (req, res) => {
       const email = model.findbyEmail(req.body.email);
        if(!email){
        const newUser = model.createNewuser(req.body);
-       const token = jwt.sign({id: newUser.id}, 'Kigali2010');
+       const token = help.generateToken(newUser.id, newUser.email);
        return res.status(200).send({
           status: 200,
           message: "User created successfully",
@@ -30,12 +34,12 @@ class register{
        })
     }
     if(find.email === req.body.email && find.password === req.body.password){
-      const token = jwt.sign({id: find.id}, 'Kigali2010');
+      const token = help.generateToken(find.id, find.email);
        return res.status(200).send({ 
           status: 200,
           message: "User is successfully logged in",
           data: {
-             token: token,
+             token,
               find
           }
        });
@@ -46,10 +50,8 @@ class register{
   })
  }
   createnewadd = (req, res) => {
-     const addentry = model.createadd(req.body);
-   //   const upload = multer({dest: '/uploads/'});
+   const addentry = model.createadd(req.body);
    const id = addentry.id;
-     const token = jwt.sign({id: addentry.id}, 'Kigali2010');
      return res.status(200).send({
         status: 200,
         data: [{
@@ -58,15 +60,15 @@ class register{
         }]
      });
   }
-  getAll(req, res) {
+  getAll = (req, res) => {
    const get = model.displayAll();
    return res.status(200).send({
       status: 200,
       data: get
    });
  }
-  getspecific(req,res) {
-     const one = model.findbystatus();
+  getspecific = (req, res) => {
+     const one = model.getbyOne(req.params.id);
      if(!one){
         return res.status(401).send({
            status: 401,
@@ -77,6 +79,21 @@ class register{
         status: 200,
         data: one
      })
+  }
+  delete = (req, res) => {
+     const del = model.getbyOne(req.params.id);
+     if(!del){
+        return res.status(401).send({
+           status: 401,
+           error: "id to be deleted not found"
+        })
+      }
+      const dell = model.delete(req.params.id);
+        return res.status(200).send({
+           status: 200,
+           message: "red-flag record has been deleted"
+           
+        })
   }
 }
 export default new register();
