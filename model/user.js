@@ -41,12 +41,19 @@ class user{
         this.add.push(addentry);
         return addentry;
     } 
-    findbystatus(){
-       return this.add.find( search => search.id === 3);
+    getbyOne(id){
+       return this.add.find( search => search.id == id);
     }
 
     displayAll(){
         return this.add; 
+    }
+
+    delete(id){
+        const remove = this.getbyOne(id);
+        const index = this.add.indexOf(remove);
+        return this.add.splice(index, 1);
+        
     }
    
 }   
