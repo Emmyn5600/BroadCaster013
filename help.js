@@ -2,7 +2,6 @@ import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv'
 
 dotenv.config();
-
 const help = {
     generateToken(id, email) {
         const token = jwt.sign({userId: id, userEmail: email,},
@@ -11,3 +10,6 @@ const help = {
       },
 };
 export default help;
+
+
+

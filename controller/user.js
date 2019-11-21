@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 import help from '../help'
 
+
 dotenv.config();
 
 class register{
@@ -80,20 +81,41 @@ class register{
         data: one
      })
   }
+  
   delete = (req, res) => {
-     const del = model.getbyOne(req.params.id);
-     if(!del){
-        return res.status(401).send({
-           status: 401,
-           error: "id to be deleted not found"
-        })
-      }
-      const dell = model.delete(req.params.id);
-        return res.status(200).send({
-           status: 200,
-           message: "red-flag record has been deleted"
-           
-        })
+   const del = model.getbyOne(req.params.id);
+   if(!del){
+      return res.status(401).send({
+         status: 401,
+         error: "id to be deleted not found"
+      })
+    }
+    const dell = model.delete(req.params.id);
+      return res.status(200).send({
+         status: 200,
+         data:[{
+            message: "red-flag record has been deleted",
+             dell
+       
+         }]
+      })
+}
+
+  update = (req, res) => {
+   const modify = model.getbyOne(req.params.id);
+   if (!modify) {
+     return res.status(404).send({
+        message: 'id to be modified is not found'
+      });
+   }
+   const allmodify = model.update(req.params.id, req.body)
+      return res.status(200).send({
+         status:200,
+         data:[{
+            message: "Updated red-flag record’s comment",
+            allmodify
+         }]
+      });
   }
 }
 export default new register();
