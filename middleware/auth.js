@@ -38,9 +38,9 @@ class validation{
             comment: Joi.string().required(),
             location: Joi.string().required(),
             status: Joi.string().required(),
-            
-            images:Joi.string().required(),
-            videos:Joi.string().required()
+            images: Joi.array().items(Joi.string()),
+            videos: Joi.array().items(Joi.string()),
+
         };
         const result1 = Joi.validate(req.body, show);
         if(result1.error){
