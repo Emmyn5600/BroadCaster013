@@ -52,7 +52,7 @@ h2
 {
     height: 2px;
     width: 40px;
-    background: #ff9800;
+    background: yellowgreen;
 }
 ul
 {
@@ -135,7 +135,7 @@ background-position: center;
 }
 .main-nav li a:hover
 {
- border-bottom: 2px solid #bf55ec;   
+ border-bottom: 3px solid yellowgreen;   
 }
 .main-content-header
 {
@@ -272,7 +272,7 @@ ul a
 }
 ul a:hover
 {
-    color: #ff9800;
+    color: yellowgreen;
 }
 ul li
 {
@@ -376,13 +376,13 @@ li img
 .bt
 {
 width: 100%;
-background: none;
-border: 2px solid #fff;
-color: white;
-padding: 5px;
-font-size: 18px;
-cursor: pointer;
-margin: 12px 0;
+display: inline-block;
+padding: 10px 30px;
+font-weight: lighter;
+text-transform: uppercase;
+border-radius: 200px;
+background-color: transparent;
+border: 1px solid  black;
 }
 .bt:hover
 {
@@ -390,7 +390,6 @@ margin: 12px 0;
 }
 ::placeholder
 {
-    background-color: rgba(44,62,80,0.7);
     opacity: 0.8;
 }
 
@@ -480,7 +479,7 @@ margin: 12px 0;
 
 .register-left img
 {
-  margin-top: 60px;
+  margin-top: 45px;
   margin-bottom: 18px;
   width: 80px;
   animation: mover 1s infinite alternate;
@@ -492,14 +491,14 @@ margin: 12px 0;
 }
 .register-left .primary
 {
-    border-radius: 1.5rem;
-    border: none;
-    width: 120px;
-    background: #000;
-    font-weight: 600;
-    color: #fff;
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    border-radius: 200px;
+    background-color: transparent;
+    border: 1px solid  black;
     margin-top: 20px;
-    padding: 10px;
 }
 .register-left .primary:hover
 {
@@ -549,13 +548,14 @@ margin: 12px 0;
 
 .register-right .primary
 {
-     float:right;
-    border-radius: 1.5rem;
-    border: none;
-    width: 120px;
-    background: #000;
-    font-weight: 600;
-    color: #fff;
+    float:right;
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    border-radius: 200px;
+    background-color: transparent;
+    border: 1px solid  black;
     margin-top: 20px;
     padding: 10px;
 }
@@ -564,7 +564,16 @@ margin: 12px 0;
     background: #0B4844;
 }
 #reco{
-    background-color: rgba(0,0,0,.5);
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    border-radius: 200px;
+    background-color: transparent;
+    border: 1px solid  black;
+}
+#reco:hover{
+    background-color: rgba(44,62,80,0.7);
 }
 @keyframes mover
 {
@@ -577,7 +586,6 @@ margin: 12px 0;
     .register-right
     {
         width: 100%;
-        /* top: 50%; */
         margin: 0;
         padding: 0;
         margin-bottom: 80px;
@@ -586,7 +594,6 @@ margin: 12px 0;
     {
         flex-direction: column;
         width: 100%;
-        /* top: 50%; */
         margin: 0;
         padding: 0;
         margin-bottom: 5px;
@@ -601,8 +608,8 @@ margin: 12px 0;
 }
 .contact-items input
 {
-    background: rgba(44,62,80,0.7);
-    color: white;
+    
+    color: #000;
 }
 
 .contact-items textarea {
@@ -610,13 +617,24 @@ margin: 12px 0;
   height: 200px;
   padding: 15px;
   width: 50%;
-  color: white;
-  background: rgba(44,62,80,0.7);
+  color: #000;
+
 }
 
 #sub
 {
-    background: rgba(44,62,80,0.7);
+   background-color: transparent;
+   display: inline-block;
+   padding: 10px 30px;
+   font-weight: lighter;
+   text-transform: uppercase;
+   border-radius: 200px;
+   background-color: transparent;
+   border: 1px solid  black;
+}
+#sub:hover
+{
+    background-color:rgba(44,62,80,0.7);;
 }
 
 @media all and (max-width:500px){
@@ -886,18 +904,15 @@ flex-direction: column;
           display: inline-block;
           color: white;
           float: right;
-          margin-top: 30px;
+          margin-top: -80px;
           margin-right: 20px;
-      }
-      
+      }     
 }
-
 @media all and (max-width:800px){
     .contact{
         flex-direction: column;
         width: 100%;
       }
-       
 }
 
 

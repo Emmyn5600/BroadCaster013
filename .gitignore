@@ -4,3 +4,5 @@ coverage
 .env
 .eslintrc.json
 package-lock.json
+image-uploader
+build
