@@ -3,8 +3,6 @@ import user from './router/userRegisterRoute';
 import UserEntry from './router/userEntryRoute';
 import dotenv from 'dotenv';
 import morgan from 'morgan'
-import verifyToken from './middleware/verifyToken';
-import { verify } from 'crypto';
 import bodyParser from 'body-parser';
 
 
