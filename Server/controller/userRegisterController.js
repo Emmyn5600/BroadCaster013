@@ -7,8 +7,21 @@ dotenv.config();
 
 class Register{
    create = (req, res) => {
+      const username = model.findbyusername(req.body.username);
       const email = model.findbyEmail(req.body.email);
-       if(!email){
+       if(email){
+         return res.status(400).send({
+            status:400,
+            error:"email already exist"
+         })
+       }
+       if(username){
+         return res.status(400).send({
+            status:400,
+            error:"username already exist"
+         })
+       }
+
        const newUser = model.createNewuser(req.body);
        const token = help.generateToken(newUser.id, newUser.email);
        return res.status(201).send({
@@ -16,21 +29,21 @@ class Register{
           message: "User created successfully",
           data: {
             token,
-            newUser
+            firstname: newUser.firstname,
+            secondname: newUser.secondname,
+            username: newUser.username,
+            email: newUser.email,
+            phonenumber: newUser.phonenumber,
+            password:newUser.password
           }
        });
-      }
-       return res.status(400).send({
-         status:400,
-         error:"email already exist"
-      })
    }
  signin = (req, res) =>{
     const userinfo = model.findbyEmail(req.body.email)
     if(!userinfo){
        return res.status(400).send({
           status: 400,
-          error: "user doesn't exist"
+          error: "your email is not found!!! please check if it correct"
        })
     }
     if(userinfo.email === req.body.email && userinfo.password === req.body.password){
@@ -40,13 +53,16 @@ class Register{
           message: "User is successfully logged in",
           data: {
              token,
-             userinfo
+            firstname: userinfo.firstname,
+            secondname: userinfo.secondname,
+            username: userinfo.username,
+            email: userinfo.email
           }
        });
     }
     return res.status(400).send({
       status: 400,
-      error: "error occured"
+      error: "the email does not match with the password "
   })
  }
  
