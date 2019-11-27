@@ -56,8 +56,8 @@ createnewadd = (req, res) => {
   delete = (req, res) => {
    const del = model.getbyOne(req.params.id);
    if(!del){
-      return res.status(401).send({
-         status: 401,
+      return res.status(400).send({
+         status: 400,
          error: "id to be deleted not found"
       })
     }
