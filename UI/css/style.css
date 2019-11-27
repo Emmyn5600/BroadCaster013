@@ -334,8 +334,8 @@ li img
 .login-box
 {   
     background-color: rgba(44,62,80,0.7);
-    width: 280px;
-    height: 350px;
+    width: 350px;
+    height: 390px;
     position: absolute;
     top: 60%;
     left: 50%;
@@ -356,7 +356,7 @@ li img
     overflow: hidden;
     font-size: 20px;
     padding: 8px 0;
-    margin: 8px 0;
+    margin: 8px 14px;
     border-bottom: 1px solid #fff;
 }
 .textbox img
@@ -491,9 +491,10 @@ border: 1px solid  black;
     float:right;
     border: none;
     background: rgba(44,62,80,0.7);
-    margin-right: 370px;
+    margin-right: 410px;
     border-bottom-left-radius: 40% 50%;
-    padding: 40px;
+    padding: 8px;
+    
 }
 .register-right h2
 {
