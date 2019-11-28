@@ -62,7 +62,7 @@ class Register{
     }
     return res.status(400).send({
       status: 400,
-      error: "the email does not match with the password "
+      error: "incorret password "
   })
  }
  
