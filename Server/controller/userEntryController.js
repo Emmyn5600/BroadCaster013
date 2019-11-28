@@ -56,9 +56,9 @@ createnewadd = (req, res) => {
   delete = (req, res) => {
    const del = model.getbyOne(req.params.id);
    if(!del){
-      return res.status(401).send({
-         status: 401,
-         error: "id to be deleted not found"
+      return res.status(400).send({
+         status: 400,
+         error: "the red-flag record you are trying to delete is not found"
       })
     }
     const dell = model.delete(req.params.id);
@@ -75,7 +75,7 @@ createnewadd = (req, res) => {
    const modifyComment = model.getbyOne(req.params.id);
    if (!modifyComment ) {
      return res.status(404).send({
-        message: 'id to be modified is not found'
+        message: 'the red-flag record you trying to modify is not found'
       });
    }
    const allmodifyComment = model.updateComment(req.params.id, req.body)
@@ -83,7 +83,7 @@ createnewadd = (req, res) => {
          status:200,
          data:[{
             message: "Updated red-flag record’s comment",
-            allmodifyComment 
+            comment: allmodifyComment.comment
          }]
       });
   }
@@ -91,7 +91,7 @@ createnewadd = (req, res) => {
    const modifyLocation = model.getbyOne(req.params.id);
    if (!modifyLocation) {
      return res.status(404).send({
-        message: 'id to be modified is not found'
+        message: 'the red-flag record you trying to modify is not found'
       });
    }
    const allmodifyLocation = model.updateLocation(req.params.id, req.body)
@@ -99,7 +99,7 @@ createnewadd = (req, res) => {
          status:200,
          data:[{
             message: "Updated red-flag record’s Location",
-            allmodifyLocation
+            location: allmodifyLocation.location
          }]
       });
   }
