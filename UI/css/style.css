@@ -332,32 +332,36 @@ li img
     }
 }
 .login-box
-{
-    width: 280px;
+{   
+    background-color: rgba(44,62,80,0.7);
+    width: 350px;
+    height: 390px;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
 }
 .login-box h1{
+    margin-left: 8px;
      float: left;
-     font-size: 40px;
+     font-size: 25px;
      border-bottom: 6px solid rgba(44,62,80,0.7);
      margin-bottom: 50px;
      padding: 13px 0;
 }
 .textbox
 {
-    width: 100%;
+    width: 90%;
     overflow: hidden;
     font-size: 20px;
     padding: 8px 0;
-    margin: 8px 0;
+    margin: 8px 14px;
     border-bottom: 1px solid #fff;
 }
 .textbox img
 {
+    margin-left: 2px;
     width:26px;
     float: left;
     text-align: center;
@@ -375,7 +379,8 @@ li img
 }
 .bt
 {
-width: 100%;
+margin-left: 11px;
+width: 90%;
 display: inline-block;
 padding: 10px 30px;
 font-weight: lighter;
@@ -396,9 +401,10 @@ border: 1px solid  black;
 .box-10
 {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
-  width: 600px;
+  width: 1000px;
+  height: 400px;
   transform: translate(-50%, -50%);
   padding: 20px;
   box-sizing: border-box;
@@ -467,38 +473,14 @@ border: 1px solid  black;
 
 .register-left
 {
-    float: left;
+  float: left;
   text-align: center;
   color: #fff;
-  padding: 30px;  
+  padding: 5px;  
 }
 #joi
 {
     color: rgba(44,62,80,0.7);
-}
-
-.register-left img
-{
-  margin-top: 45px;
-  margin-bottom: 18px;
-  width: 80px;
-  animation: mover 1s infinite alternate;
-
-}
-.register-left p
-{
-   padding: 20px 20px 0; 
-}
-.register-left .primary
-{
-    display: inline-block;
-    padding: 10px 30px;
-    font-weight: lighter;
-    text-transform: uppercase;
-    border-radius: 200px;
-    background-color: transparent;
-    border: 1px solid  black;
-    margin-top: 20px;
 }
 .register-left .primary:hover
 {
@@ -509,10 +491,10 @@ border: 1px solid  black;
     float:right;
     border: none;
     background: rgba(44,62,80,0.7);
-    margin-right: 100px;
-    border-top-left-radius: 40% 50%;
+    margin-right: 410px;
     border-bottom-left-radius: 40% 50%;
-    padding: 50px;
+    padding: 8px;
+    
 }
 .register-right h2
 {
