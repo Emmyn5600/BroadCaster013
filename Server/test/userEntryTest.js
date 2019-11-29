@@ -1,11 +1,8 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../server';
-import jwt from 'jsonwebtoken';
-import generateToken from '../helpers/Userhelper'
 import fs from 'fs';
 import path from 'path';
-import Auth from '../middleware/auth';
 import help from '../helpers/Userhelper';
 import model from '../model/userEntryModel'
 

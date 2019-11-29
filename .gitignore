@@ -6,4 +6,3 @@ coverage
 package-lock.json
 image-uploader
 build
-upload/
