@@ -6,8 +6,8 @@ verifyToken(req, res, next) {
   try {
     const token = req.headers['authorization'];
     if(!token) {
-      return res.status(401).send({
-          status: 401,
+      return res.status(400).send({
+          status: 400,
           message: "Token is needed at header section"
       });
     }
@@ -15,9 +15,9 @@ verifyToken(req, res, next) {
       req.user = { id: decoded.userId };
       next();
   } catch (error) {
-    return res.status(401).send({ 
-      status: 401,
-      error: `error occurred ${error}`
+    return res.status(400).send({ 
+      status: 400,
+      error: `invalid token, please check the token before you use it`
   })
   }
     }

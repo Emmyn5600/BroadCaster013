@@ -3,8 +3,6 @@ import user from './router/userRegisterRoute';
 import UserEntry from './router/userEntryRoute';
 import dotenv from 'dotenv';
 import morgan from 'morgan'
-import verifyToken from './middleware/verifyToken';
-import { verify } from 'crypto';
 import bodyParser from 'body-parser';
 
 
@@ -21,5 +19,8 @@ app.use(bodyParser.json());
 app.use('/api/v1', user);
 app.use('/api/v1', UserEntry)
 
-app.listen(3000)
+const port = process.env.PORT || 3000;
+app.listen(port);
 console.log('app running on port ', 3000);
+
+export default app;

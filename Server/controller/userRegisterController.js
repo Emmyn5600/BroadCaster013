@@ -7,46 +7,62 @@ dotenv.config();
 
 class Register{
    create = (req, res) => {
+      const username = model.findbyusername(req.body.username);
       const email = model.findbyEmail(req.body.email);
-       if(!email){
+       if(email){
+         return res.status(400).send({
+            status:400,
+            error:"email already exist"
+         })
+       }
+       if(username){
+         return res.status(400).send({
+            status:400,
+            error:"username already exist"
+         })
+       }
+
        const newUser = model.createNewuser(req.body);
        const token = help.generateToken(newUser.id, newUser.email);
-       return res.status(200).send({
-          status: 200,
+       return res.status(201).send({
+          status: 201,
           message: "User created successfully",
           data: {
             token,
-            newUser
+            firstname: newUser.firstname,
+            secondname: newUser.secondname,
+            username: newUser.username,
+            email: newUser.email,
+            phonenumber: newUser.phonenumber,
+            password:newUser.password
           }
        });
-      }
-       return res.status(401).send({
-         status:401,
-         error:"email already exist"
-      })
    }
  signin = (req, res) =>{
-    const find = model.findbyEmail(req.body.email)
-    if(!find){
-       return res.status(401).send({
-          status: 401,
-          error: "user doesn't exist"
+    const userinfo = model.findbyEmail(req.body.email)
+    if(!userinfo){
+       return res.status(400).send({
+          status: 400,
+          error: "your email is not found!!! please check if it correct"
        })
     }
-    if(find.email === req.body.email && find.password === req.body.password){
-      const token = help.generateToken(find.id, find.email);
-       return res.status(200).send({ 
-          status: 200,
+    if(userinfo.email === req.body.email && userinfo.password === req.body.password){
+      const token = help.generateToken(userinfo.id, userinfo.email);
+       return res.status(201).send({ 
+          status: 201,
           message: "User is successfully logged in",
           data: {
              token,
-              find
+            firstname: userinfo.firstname,
+            secondname: userinfo.secondname,
+            username: userinfo.username,
+            email: userinfo.email
           }
        });
     }
-    return res.status(401).send({
-      status: 401,
-      error: "error occured"
+    return res.status(400).send({
+      status: 400,
+      error: "incorret password "
   })
  }
  

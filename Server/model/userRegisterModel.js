@@ -16,13 +16,15 @@ class User{
        phonenumber : data.phonenumber || "",
        email : data.email || "",
        password : data.password || "",
-       confirmpassord : data.confirmpassword || "",
       };
      this.user.push(newUser);
       return newUser;
     }
     findbyEmail(email){
         return this.user.find(found => found.email === email);
+    }
+    findbyusername(username){
+        return this.user.find(found => found.username === username); 
     }
 }   
 export default new User ();

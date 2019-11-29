@@ -4,9 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "babel server.js --out-dir build",
     "dev-start": "babel-watch server/server.js",
-    "start": "node server.js"
+    "start": "node --require @babel/register ./Server/server.js ",
+    "test": "nyc mocha --require  @babel/register Server/test/*.js --timeout  100000 --exit",
+    "coverage": "nyc npm run test && nyc report --reporter=text-lcov | coveralls",
+    "showCoverage": "start coverage/server/index.html"
   },
   "repository": {
     "type": "git",
@@ -28,13 +30,25 @@
     "babel-preset-env": "^1.7.0",
     "babel-watch": "^7.0.0",
     "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "coverage": "^0.4.1",
+    "coveralls": "^3.0.9",
     "dotenv": "^8.2.0",
     "ejs": "^2.7.4",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.6-alpha.6",
-    "morgan": "^1.9.1"
+    "mocha": "^6.2.2",
+    "morgan": "^1.9.1",
+    "nyc": "^14.1.1",
+    "travis-ci": "^2.2.0",
+    "@babel/register": "^7.7.4"
   },
   "devDependencies": {
+    
+    "@typescript-eslint/eslint-plugin": "^2.8.0",
+    "@typescript-eslint/parser": "^2.8.0",
+    "eslint": "^6.7.0",
     "joi-image-extension": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
     "merge-images": "^1.1.0",
@@ -43,6 +57,7 @@
     "multer": "^1.4.2",
     "node-video-lib": "^2.1.10",
     "package-name": "^0.1.0",
+    "request": "^2.88.0",
     "uuid": "^3.3.3"
   },
   "keywords": []
