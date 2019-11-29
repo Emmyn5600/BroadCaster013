@@ -39,45 +39,52 @@ class Validation{
     }
 
 useraddvalidation(req,res,next){
-    const{ files } = req;
+    try {
+        const{ files } = req;
 
-    const test1 = files[0].path;
-    const test2 = files[1].path;
-    const item = {
-        title: req.body.title,
-        type: req.body.type,
-        comment: req.body.comment,
-        location: req.body.location,
-        status: req.body.status,
-        images: [test1],
-        videos: [test2],
-     }
-    const show = {
-        title: Joi.string().min(3).max(100).trim().required(),
-        type: Joi.string().min(3).max(100).trim().required(),
-        comment: Joi.string().min(3).max(1000).trim().required(),
-        location: Joi.string().required(),
-        status: Joi.string().required(),
-        images: Joi.array().items(Joi.string()),
-        videos: Joi.array().items(Joi.string()),
-    };
-    const result = Joi.validate(item, show,
-        {
-            abortEarly: false
-        
-        });
-        const validity = result.error == null;
-
-      if(validity ){
-          return next();
-
-      } else {
-        const details = result.error.details;
-        const message = details.map(i => i.message.replace('"', '').replace('"', '')).join(', ');
-        return res.status(400).json({
-            status: 400,
-            error: message,
-        });
+        const test1 = files[0].path;
+        const test2 = files[1].path;
+        const item = {
+            title: req.body.title,
+            type: req.body.type,
+            comment: req.body.comment,
+            location: req.body.location,
+            status: req.body.status,
+            images: [test1],
+            videos: [test2],
+         }
+        const show = {
+            title: Joi.string().min(3).max(100).trim().required(),
+            type: Joi.string().min(3).max(100).trim().required(),
+            comment: Joi.string().min(3).max(1000).trim().required(),
+            location: Joi.string().required(),
+            status: Joi.string().required(),
+            images: Joi.array().items(Joi.string()),
+            videos: Joi.array().items(Joi.string()),
+        };
+        const result = Joi.validate(item, show,
+            {
+                abortEarly: false
+            
+            });
+            const validity = result.error == null;
+    
+          if(validity ){
+              return next();
+    
+          } else {
+            const details = result.error.details;
+            const message = details.map(i => i.message.replace('"', '').replace('"', '')).join(', ');
+            return res.status(400).json({
+                status: 400,
+                error: message,
+            });
+        }
+    } catch (error) {
+        return res.status(500).send({
+            status: 500,
+            error: `error occur${error}`,
+         }); 
     }
 }
 

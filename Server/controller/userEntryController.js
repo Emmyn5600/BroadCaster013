@@ -8,28 +8,36 @@ dotenv.config();
 class Entry {
 
 createnewadd = (req, res) => {
-    const{ files } = req;
+   try {
+      const{ files } = req;
 
-   const test1 = files[0].path;
-   const test2 = files[1].path;
-   const item = {
-      title: req.body.title,
-      type: req.body.type,
-      comment: req.body.comment,
-      location: req.body.location,
-      status: req.body.status,
-      images: test1,
-      videos: test2,
+      const test1 = files[0].path;
+      const test2 = files[1].path;
+      const item = {
+         title: req.body.title,
+         type: req.body.type,
+         comment: req.body.comment,
+         location: req.body.location,
+         status: req.body.status,
+         images: test1,
+         videos: test2,
+      }
+      const addentry = model.createadd(item);
+      const id = addentry.id;
+        return res.status(200).send({
+           status: 200,
+           data: [{
+              id,
+              message: "Created red-flag record",
+           }
+         ]
+        });
+   } catch (error) {
+      return res.status(500).send({
+         status: 200,
+         error: `error occur${error}`,
+      });
    }
-   const addentry = model.createadd(item);
-   const id = addentry.id;
-     return res.status(200).send({
-        status: 200,
-        data: [{
-           id,
-           message: "Created red-flag record",
-        }]
-     });
   }
 
   getAll = (req, res) => {
@@ -74,7 +82,8 @@ createnewadd = (req, res) => {
   updateComment= (req, res) => {
    const modifyComment = model.getbyOne(req.params.id);
    if (!modifyComment ) {
-     return res.status(404).send({
+     return res.status(400).send({
+        status:400,
         message: 'the red-flag record you trying to modify is not found'
       });
    }
@@ -90,7 +99,8 @@ createnewadd = (req, res) => {
   updateLocation= (req, res) => {
    const modifyLocation = model.getbyOne(req.params.id);
    if (!modifyLocation) {
-     return res.status(404).send({
+     return res.status(401).send({
+        status:400,
         message: 'the red-flag record you trying to modify is not found'
       });
    }
