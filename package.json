@@ -6,7 +6,7 @@
   "scripts": {
     "dev-start": "babel-watch server/server.js",
     "start": "node --require @babel/register ./server/server.js ",
-    "test": "nyc mocha Server/test --require  @babel/register --timeout  100000 --exit",
+    "test": "nyc mocha Server/test/*.js --require  @babel/register --timeout  100000 --exit",
     "coverage": "nyc npm run test && nyc report --reporter=text-lcov | coveralls",
     "showCoverage": "start coverage/server/index.html"
   },
