@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "babel server.js --out-dir build",
     "dev-start": "babel-watch server/server.js",
     "start": "node --require @babel/register ./server/server.js ",
     "test": "nyc mocha server/test --require  @babel/register --timeout  100000 --exit",
