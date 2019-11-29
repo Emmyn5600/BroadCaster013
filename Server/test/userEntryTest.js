@@ -205,7 +205,6 @@ describe('testing the create red-flag endpoint', () => {
     .send({ location: 'provide location' })
     .set("Authorization", `${correctTokens .savedUser}`)
     .end((err, res) => {
-        console.log(res.body);
      expect(res.body.status).to.equal(200);
      expect(res.body.data[0].message).to.equal('Updated red-flag record’s Location');
      expect(res.body.data[0].location).to.be.an('String');
